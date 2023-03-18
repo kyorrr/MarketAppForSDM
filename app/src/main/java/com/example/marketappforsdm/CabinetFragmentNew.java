@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CabinetFragmentNew extends Fragment {
 
-    private Button myZakazi, historyOfZakazi, statusZakaza, leaveFromAcc;
+    private Button myZakazi, historyOfZakazi, statusZakaza, leaveFromAcc, setting, whattoupd, information;
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference users;
@@ -55,15 +55,16 @@ public class CabinetFragmentNew extends Fragment {
         myZakazi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ZakaziActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(view.getContext(), ZakaziActivity.class);
+//                startActivity(intent);
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
             }
         });
         historyOfZakazi = rootCabinetNew.findViewById(R.id.historyOfZakazi);
         historyOfZakazi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Вы вошли!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
             }
         });
         statusZakaza = rootCabinetNew.findViewById(R.id.statusZakaza);
@@ -84,6 +85,27 @@ public class CabinetFragmentNew extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment);
                 fragmentTransaction.commit();
+            }
+        });
+        setting = rootCabinetNew.findViewById(R.id.settings);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        whattoupd = rootCabinetNew.findViewById(R.id.whattoupd);
+        whattoupd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        information = rootCabinetNew.findViewById(R.id.information);
+        information.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
             }
         });
         return view;

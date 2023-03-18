@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CabinetFragment extends Fragment {
 
-    private Button buttonLogin, buttonRegistration, myZakazi, historyOfZakazi, statusZakaza;
+    private Button buttonLogin, buttonRegistration, myZakazi, historyOfZakazi, statusZakaza, setting, whattoupd, information;
 
     FirebaseAuth auth;
     FirebaseDatabase db;
@@ -70,6 +70,27 @@ public class CabinetFragment extends Fragment {
         });
         statusZakaza = rootCabinet.findViewById(R.id.statusZakaza);
         statusZakaza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        setting = rootCabinet.findViewById(R.id.settings);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        whattoupd = rootCabinet.findViewById(R.id.whattoupd);
+        whattoupd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();
+            }
+        });
+        information = rootCabinet.findViewById(R.id.information);
+        information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "В разработке!", Toast.LENGTH_SHORT).show();

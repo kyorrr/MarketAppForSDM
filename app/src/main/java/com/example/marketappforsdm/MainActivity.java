@@ -70,7 +70,11 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.favorites:
-                    replaceFragment(new FavoriteFragment());
+                    if(isAuthenticated){
+                        replaceFragment(new FavoriteFragmentNew());
+                    } else {
+                        replaceFragment(new FavoriteFragment());
+                    }
                     break;
 
                 case R.id.cabinet:

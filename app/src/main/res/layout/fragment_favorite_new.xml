@@ -9,15 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".FavoriteFragment"
-        android:id="@+id/favorite_fragment">
+        tools:context=".FavoriteFragmentNew"
+        android:id="@+id/favorite_fragment_new">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/montserrat_bold"
-            android:text="@string/favorites"
+            android:text="Избранное вошли"
             android:textColor="@color/black"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
