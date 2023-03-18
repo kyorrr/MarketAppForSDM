@@ -1,16 +1,18 @@
 package com.example.marketappforsdm.models;
 
 public class User {
-    private String login, email, phone, pass, pass2;
+    private String login, email, phone, pass, pass2, name, surname;
 
     public User(){}
 
-    public User(String login, String email, String phone, String pass, String pass2) {
+    public User(String login, String email, String phone, String pass, String pass2, String name, String surname) {
         this.login = login;
         this.email = email;
         this.phone = phone;
         this.pass = pass;
         this.pass2 = pass2;
+        this.name = name;
+        this.surname = surname;
     }
 
     public String getLogin() {
@@ -51,5 +53,21 @@ public class User {
 
     public void setPass2(String pass2) {
         this.pass2 = pass2;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }

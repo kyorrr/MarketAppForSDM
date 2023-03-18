@@ -55,7 +55,8 @@ public class CabinetFragmentNew extends Fragment {
         myZakazi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Вы вошли!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(view.getContext(), ZakaziActivity.class);
+                startActivity(intent);
             }
         });
         historyOfZakazi = rootCabinetNew.findViewById(R.id.historyOfZakazi);

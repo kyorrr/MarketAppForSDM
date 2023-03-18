@@ -1,17 +1,13 @@
 package com.example.marketappforsdm;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.annotation.SuppressLint;
-import android.content.DialogInterface;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,9 +25,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Objects;
-import java.util.regex.Pattern;
-
 public class RegistrationActivity extends AppCompatActivity {
 
     Button btnReg;
@@ -39,6 +32,8 @@ public class RegistrationActivity extends AppCompatActivity {
     FirebaseDatabase db;
     DatabaseReference users;
     ConstraintLayout root;
+
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +47,9 @@ public class RegistrationActivity extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         users = db.getReference("Users");
 
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Подождите...");
+
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,10 +58,21 @@ public class RegistrationActivity extends AppCompatActivity {
                 final EditText phone = root.findViewById(R.id.inputMobile);
                 final EditText pass = root.findViewById(R.id.inputPassword);
                 final EditText pass2 = root.findViewById(R.id.inputPassword2);
+                final EditText name = root.findViewById(R.id.inputName);
+                final EditText surname = root.findViewById(R.id.inputSurname);
+
 
                         if(TextUtils.isEmpty(login.getText().toString())){
                             Toast.makeText(RegistrationActivity.this, "Введите логин!", Toast.LENGTH_SHORT).show();
                             return;
+                        }
+                        if(TextUtils.isEmpty(name.getText().toString())){
+                        Toast.makeText(RegistrationActivity.this, "Введите имя!", Toast.LENGTH_SHORT).show();
+                        return;
+                        }
+                        if(TextUtils.isEmpty(name.getText().toString())){
+                        Toast.makeText(RegistrationActivity.this, "Введите фамилию!", Toast.LENGTH_SHORT).show();
+                        return;
                         }
                         if(TextUtils.isEmpty(email.getText().toString())){
                             Toast.makeText(RegistrationActivity.this, "Введите почту!", Toast.LENGTH_SHORT).show();
@@ -88,17 +97,22 @@ public class RegistrationActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             return;
                         }
+
+                        dialog.show();
                         //Регистрация пользователя
                         auth.createUserWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
                                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                     @Override
                                     public void onSuccess(AuthResult authResult) {
+                                        dialog.dismiss();
                                         User user = new User();
                                         user.setLogin(login.getText().toString());
                                         user.setEmail(email.getText().toString());
                                         user.setPhone(phone.getText().toString());
                                         user.setPass(pass.getText().toString());
                                         user.setPass2(pass2.getText().toString());
+                                        user.setName(name.getText().toString());
+                                        user.setSurname(surname.getText().toString());
 
                                         users.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(user)
@@ -106,10 +120,13 @@ public class RegistrationActivity extends AppCompatActivity {
                                                     @Override
                                                     public void onSuccess(Void unused) {
 
+                                                        dialog.dismiss();
+
                                                         auth.getCurrentUser().sendEmailVerification()
                                                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
+                                                                dialog.dismiss();
                                                                 if(task.isSuccessful()){
                                                                     Toast.makeText(RegistrationActivity.this,
                                                                             "Регистрация успешна! " +
@@ -120,6 +137,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                                                     finish();
                                                                 }
                                                                 else{
+                                                                    dialog.dismiss();
                                                                     Snackbar.make(root,
                                                                             "Регистрация не удалась! " + task
                                                                                     .getException().getMessage(),
@@ -133,6 +151,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        dialog.dismiss();
                         Snackbar.make(root,
                                 "Регистрация не удалась! " + e.getMessage(),
                                 Snackbar.LENGTH_SHORT).show();

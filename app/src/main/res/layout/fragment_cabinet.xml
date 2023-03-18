@@ -1,139 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rootCabinet"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/btn_bg_white"
-    android:backgroundTint="@color/white"
-    tools:context=".CabinetFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="175dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="3dp"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rootCabinet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/btn_bg_white"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Вход"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/buttonRegistration"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:backgroundTint="@color/white"
+        tools:context=".CabinetFragment">
 
-    <Button
-        android:id="@+id/buttonRegistration"
-        android:layout_width="175dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/btn_bg_white"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Регистрация"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonLogin"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="419dp"
-        android:layout_height="123dp"
-        android:src="@drawable/logo_big"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/zakaziLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@color/orange"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegistration">
-
-        <TextView
-            android:id="@+id/zakazi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="175dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/btn_bg_white"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Заказы"
+            android:text="Вход"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="24sp" />
-    </LinearLayout>
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonRegistration"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <Button
-        android:id="@+id/myZakazi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="3dp"
-        android:drawableLeft="@drawable/zakazi"
-        android:drawableTint="@color/white"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="left"
-        android:text="Мои заказы"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:iconPadding="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zakaziLayout" />
+        <Button
+            android:id="@+id/buttonRegistration"
+            android:layout_width="175dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/btn_bg_white"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Регистрация"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonLogin"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <Button
-        android:id="@+id/historyOfZakazi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:drawableLeft="@drawable/istoriyazakazov"
-        android:drawableTint="@color/white"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="left"
-        android:text="История заказов"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:iconPadding="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myZakazi" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="419dp"
+            android:layout_height="123dp"
+            android:src="@drawable/logo_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/statusZakaza"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:drawableLeft="@drawable/statuszakazov"
-        android:drawableTint="@color/white"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="left"
-        android:text="Проверить статус заказа"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:iconPadding="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/historyOfZakazi" />
+        <LinearLayout
+            android:id="@+id/zakaziLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/orange"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegistration">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/zakazi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Заказы"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/myZakazi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="3dp"
+            android:drawableLeft="@drawable/zakazi"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="left"
+            android:text="Мои заказы"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:iconPadding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zakaziLayout" />
+
+        <Button
+            android:id="@+id/historyOfZakazi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:drawableLeft="@drawable/istoriyazakazov"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="left"
+            android:text="История заказов"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:iconPadding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myZakazi" />
+
+        <Button
+            android:id="@+id/statusZakaza"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:drawableLeft="@drawable/statuszakazov"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="left"
+            android:text="Проверить статус заказа"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:iconPadding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/historyOfZakazi" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
