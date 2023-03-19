@@ -1,6 +1,7 @@
 package com.example.marketappforsdm;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,18 +14,22 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.BufferedReader;
+
 public class FavoriteFragmentNew extends Fragment {
 
+    private Button startBuying;
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference users;
-    ConstraintLayout rootCabinetNew;
+    ConstraintLayout favorite_fragment_new;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,8 +49,16 @@ public class FavoriteFragmentNew extends Fragment {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         users = db.getReference("Users");
-        rootCabinetNew = view.findViewById(R.id.favorite_fragment_new);
+        favorite_fragment_new = view.findViewById(R.id.favorite_fragment_new);
 
+        startBuying = view.findViewById(R.id.startBuying);
+        startBuying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), CatalogFragment.class);
+                startActivity(myIntent);
+            }
+        });
         return view;
     }
 }

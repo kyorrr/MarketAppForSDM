@@ -20,7 +20,7 @@
             android:layout_marginTop="3dp"
             android:background="@drawable/btn_bg_white"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Вход"
+            android:text="Войти"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
