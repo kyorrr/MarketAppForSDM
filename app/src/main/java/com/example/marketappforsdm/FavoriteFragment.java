@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class FavoriteFragment extends Fragment {
-
     private Button btnLoginFavorite;
-
     ConstraintLayout favorite_fragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

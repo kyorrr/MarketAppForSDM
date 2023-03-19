@@ -19,14 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class CabinetFragment extends Fragment {
-
     private Button buttonLogin, buttonRegistration, myZakazi, historyOfZakazi, statusZakaza, setting, whattoupd, information;
-
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference users;
     ConstraintLayout rootCabinet;
-
     @Override
     @Nullable
     public View onCreateView(@NonNull LayoutInflater inflater,@Nullable ViewGroup container,

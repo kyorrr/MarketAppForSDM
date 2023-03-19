@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -24,13 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.BufferedReader;
 
 public class FavoriteFragmentNew extends Fragment {
-
     private Button startBuying;
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference users;
     ConstraintLayout favorite_fragment_new;
-
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,@Nullable ViewGroup container,
@@ -55,8 +54,12 @@ public class FavoriteFragmentNew extends Fragment {
         startBuying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getActivity(), CatalogFragment.class);
-                startActivity(myIntent);
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_layout, new CatalogFragment())
+                        .addToBackStack(null)
+                        .commit();
+                BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottom_navigation_view);
+                bottomNavigationView.setSelectedItemId(R.id.catalog);
             }
         });
         return view;

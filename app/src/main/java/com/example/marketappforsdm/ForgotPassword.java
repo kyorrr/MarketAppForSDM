@@ -22,13 +22,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ForgotPassword extends AppCompatActivity {
-
     Button btn_forgotPass;
     FirebaseAuth auth;
     FirebaseDatabase db;
     DatabaseReference users;
-    ConstraintLayout root3;
-
+    ConstraintLayout rootForgotPass;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +34,11 @@ public class ForgotPassword extends AppCompatActivity {
         setContentView(R.layout.activity_forgotpassword);
 
         btn_forgotPass = findViewById(R.id.btn_forgotPass);
-        root3 = findViewById(R.id.root3);
+        rootForgotPass = findViewById(R.id.rootForgotPass);
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         users = db.getReference("Users");
-
         btn_forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +58,7 @@ public class ForgotPassword extends AppCompatActivity {
                                 finish();
                             }
                             else{
-                                Snackbar.make(root3, "Ошибка! " + task.getException().getMessage(),
+                                Snackbar.make(rootForgotPass, "Ошибка! " + task.getException().getMessage(),
                                         Snackbar.LENGTH_SHORT).show();
                             }
                         }
