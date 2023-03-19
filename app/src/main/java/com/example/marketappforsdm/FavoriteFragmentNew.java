@@ -55,7 +55,7 @@ public class FavoriteFragmentNew extends Fragment {
         startBuying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), CatalogFragment.class);
+                Intent myIntent = new Intent(getActivity(), CatalogFragment.class);
                 startActivity(myIntent);
             }
         });
