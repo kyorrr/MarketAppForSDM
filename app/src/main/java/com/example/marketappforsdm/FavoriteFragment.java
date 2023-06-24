@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class FavoriteFragment extends Fragment {
-    private Button btnLoginFavorite;
     ConstraintLayout favorite_fragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -21,7 +20,7 @@ public class FavoriteFragment extends Fragment {
 
         favorite_fragment = view.findViewById(R.id.favorite_fragment);
 
-        btnLoginFavorite = favorite_fragment.findViewById(R.id.btnLoginFavorite);
+        Button btnLoginFavorite = favorite_fragment.findViewById(R.id.btnLoginFavorite);
         btnLoginFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

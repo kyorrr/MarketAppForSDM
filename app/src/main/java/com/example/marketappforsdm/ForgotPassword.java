@@ -1,31 +1,16 @@
 package com.example.marketappforsdm;
 
-import androidx.annotation.NonNull;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class ForgotPassword extends AppCompatActivity {
     Button btn_forgotPass;
-    FirebaseAuth auth;
-    FirebaseDatabase db;
-    DatabaseReference users;
     ConstraintLayout rootForgotPass;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,38 +20,16 @@ public class ForgotPassword extends AppCompatActivity {
 
         btn_forgotPass = findViewById(R.id.btn_forgotPass);
         rootForgotPass = findViewById(R.id.rootForgotPass);
-
-        auth = FirebaseAuth.getInstance();
-        db = FirebaseDatabase.getInstance();
-        users = db.getReference("Users");
         btn_forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final EditText email = findViewById(R.id.inputEmail);
-                if(TextUtils.isEmpty(email.getText().toString())){
-                    Toast.makeText(ForgotPassword.this, "Введите почту!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                else {
-                    auth.sendPasswordResetEmail(email.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(ForgotPassword.this, "Пожалуйста, проверьте вашу почту!"
-                                        ,Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(ForgotPassword.this, LoginActivity.class));
-                                finish();
-                            }
-                            else{
-                                Snackbar.make(rootForgotPass, "Ошибка! " + task.getException().getMessage(),
-                                        Snackbar.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
+
+
+
             }
         });
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView btnBack = findViewById(R.id.btnBack3);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        ImageView btnBack = findViewById(R.id.btnBack3);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

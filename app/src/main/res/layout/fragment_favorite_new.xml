@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         android:paddingTop="0dp"
         android:background="@color/white"
@@ -24,7 +24,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.195"
-            app:srcCompat="@drawable/sad_face" />
+            app:srcCompat="@drawable/sad_face"
+            tools:ignore="ImageContrastCheck"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/textView6"
@@ -33,7 +35,7 @@
             android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
-            android:text="В избранном пока ничего нет"
+            android:text="@string/nothingInFavourites"
             android:textColor="@color/blue"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +52,7 @@
             android:layout_marginEnd="32dp"
             android:fontFamily="@font/montserrat"
             android:gravity="center"
-            android:text="Добавляйте товары в Избранное с помощью ♡"
+            android:text="@string/addInFav"
             android:textColor="@color/blue"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,12 +65,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Начать покупки"
+            android:text="@string/startBuying"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            tools:ignore="TextSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

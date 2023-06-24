@@ -7,6 +7,7 @@
     <string name="favorites">Избранное</string>
     <string name="cabinet">Кабинет</string>
     <string name="cabinetLoggedIn">Кабинет</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="login">Вход</string>
     <string name="register">Регистрация</string>
@@ -21,6 +22,43 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="telephone">Телефон</string>
+    <string name="todo">TODO</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="otchestvo">Отчество</string>
+    <string name="mail">Почта</string>
+    <string name="pass6symobls">Пароль (Не менее 6 символов)</string>
+    <string name="retrypass">Повторите пароль</string>
+    <string name="registration">Регистрация</string>
+    <string name="alreadyRegistered">Уже зарегистрированы?</string>
+    <string name="noneedinacc">Не нужен аккаунт?</string>
+    <string name="join">Войти!</string>
+    <string name="join2">Войти</string>
+    <string name="reg2">Регистрация</string>
+    <string name="orders">Заказы</string>
+    <string name="myOrders">Мои заказы</string>
+    <string name="historyOfOrders">История заказов</string>
+    <string name="statusOfOrders">Проверить статус заказа</string>
+    <string name="helpCenter">Центр поддержки</string>
+    <string name="settings">Настройки</string>
+    <string name="whatToUpd">Что улучшить?</string>
+    <string name="version">Версия: 0.1</string>
+    <string name="information">Информация</string>
+    <string name="checkOrderStatus">Проверить статус заказа</string>
+    <string name="leaveFromAcc">Выход</string>
+    <string name="nothingInFavourites">В избранном пока ничего нет</string>
+    <string name="joinInAccInFav">Войдите в личный кабинет, чтобы добавить товар или увидеть добавленные ранее товары</string>
+    <string name="addInFav">Добавляйте товары в Избранное с помощью ♡</string>
+    <string name="startBuying">Начать покупки</string>
+    <string name="accRecovery">Восстановление аккаунта</string>
+    <string name="send">Отправить</string>
+    <string name="textInRecoveryWindow">Чтобы восстановить ваш аккаунт, мы отправим вам на электронную почту письмо, в котором вам потребуется перейти по ссылке и пройти этап восстановления аккаунта!</string>
+    <string name="authorization">Авторизация</string>
+    <string name="forgotPass">Забыли пароль?</string>
+    <string name="noAcc">Нет аккаунта?</string>
+    <string name="goToReg">Зарегистрируйтесь!</string>
 </resources>

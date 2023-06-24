@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rootCabinetNew"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_white"
         android:backgroundTint="@color/white"
         tools:context=".CabinetFragmentNew">
@@ -23,7 +23,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo" />
 
         <LinearLayout
             android:id="@+id/zakaziLayout"
@@ -38,15 +39,16 @@
 
             <TextView
                 android:id="@+id/zakazi"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Заказы"
+                android:text="@string/orders"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
         <Button
@@ -60,7 +62,7 @@
             android:drawableTint="@color/white"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="left"
-            android:text="Мои заказы"
+            android:text="@string/myOrders"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -68,7 +70,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zakaziLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/zakaziLayout"
+            tools:ignore="RtlHardcoded,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/historyOfZakazi"
@@ -76,18 +79,19 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:drawableLeft="@drawable/istoriyazakazov"
+            android:drawableLeft="@drawable/historyoforders"
             android:drawableTint="@color/white"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="left"
-            android:text="История заказов"
+            android:text="@string/historyOfOrders"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:iconPadding="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/myZakazi" />
+            app:layout_constraintTop_toBottomOf="@+id/myZakazi"
+            tools:ignore="RtlHardcoded,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/statusZakaza"
@@ -95,18 +99,19 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:drawableLeft="@drawable/statuszakazov"
+            android:drawableLeft="@drawable/statusoforders"
             android:drawableTint="@color/white"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="left"
-            android:text="Проверить статус заказа"
+            android:text="@string/checkOrderStatus"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:iconPadding="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/historyOfZakazi" />
+            app:layout_constraintTop_toBottomOf="@+id/historyOfZakazi"
+            tools:ignore="RtlHardcoded,VisualLintButtonSize" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -121,14 +126,15 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Центр поддержки"
+                android:text="@string/helpCenter"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
 
@@ -143,14 +149,15 @@
             android:drawableTint="@color/white"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="left"
-            android:text="Настройки"
+            android:text="@string/settings"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:iconPadding="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            tools:ignore="RtlHardcoded,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/whattoupd"
@@ -162,14 +169,15 @@
             android:drawableTint="@color/white"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="left"
-            android:text="Что улучшить?"
+            android:text="@string/whatToUpd"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:iconPadding="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings" />
+            app:layout_constraintTop_toBottomOf="@+id/settings"
+            tools:ignore="RtlHardcoded,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/information"
@@ -177,18 +185,19 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:drawableLeft="@drawable/kontakty"
+            android:drawableLeft="@drawable/contacts"
             android:drawableTint="@color/white"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="left"
-            android:text="Информация"
+            android:text="@string/information"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:iconPadding="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/whattoupd" />
+            app:layout_constraintTop_toBottomOf="@+id/whattoupd"
+            tools:ignore="RtlHardcoded,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/leaveFromAcc"
@@ -200,7 +209,7 @@
             android:drawableTint="@color/white"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="left"
-            android:text="Выход"
+            android:text="@string/leaveFromAcc"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -208,16 +217,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/information" />
+            app:layout_constraintTop_toBottomOf="@+id/information"
+            tools:ignore="RtlHardcoded,VisualLintButtonSize" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:fontFamily="@font/montserrat"
-            android:text="Версия: 0.1"
-            android:textColor="@color/orange"
+            android:gravity="center"
+            android:text="@string/version"
+            android:textColor="#DD2C00"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

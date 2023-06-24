@@ -22,7 +22,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.021"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/Register"
@@ -42,23 +43,23 @@
             app:layout_constraintVertical_bias="0.027" />
 
         <EditText
-            android:id="@+id/inputUsername"
+            android:id="@+id/inputPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/person"
+            android:drawableStart="@drawable/smartphone"
             android:drawablePadding="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Логин"
-            android:inputType="textPersonName"
+            android:hint="@string/telephone"
+            android:inputType="phone"
             android:minHeight="48dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="10dp"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
@@ -66,7 +67,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Register" />
+            app:layout_constraintTop_toBottomOf="@+id/Register"
+            android:autofillHints=""
+            tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/inputName"
@@ -74,22 +77,23 @@
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/person"
+            android:drawableStart="@drawable/person"
             android:drawablePadding="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Имя"
+            android:hint="@string/name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="10dp"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/inputUsername"
-            app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
+            app:layout_constraintStart_toStartOf="@+id/inputPhone"
+            app:layout_constraintTop_toBottomOf="@+id/inputPhone"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/inputSurname"
@@ -98,23 +102,50 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/person"
+            android:drawableStart="@drawable/person"
             android:drawablePadding="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Фамилия"
+            android:hint="@string/surname"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="10dp"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/inputUsername"
+            app:layout_constraintEnd_toEndOf="@+id/inputPhone"
             app:layout_constraintStart_toEndOf="@+id/inputName"
-            app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
+            app:layout_constraintTop_toBottomOf="@+id/inputPhone"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/inputOtchestvo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_bg"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/otchestvo"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/inputPhone"
+            app:layout_constraintStart_toStartOf="@+id/inputPhone"
+            app:layout_constraintTop_toBottomOf="@+id/inputSurname"
+            android:autofillHints=""
+            tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/inputEmail"
@@ -122,48 +153,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/email2"
+            android:drawableStart="@drawable/email2"
             android:drawablePadding="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Email"
+            android:hint="@string/mail"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="10dp"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/inputUsername"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/inputUsername"
-            app:layout_constraintTop_toBottomOf="@+id/inputSurname" />
-
-        <EditText
-            android:id="@+id/inputMobile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/smartphone"
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:fontFamily="@font/montserrat"
-            android:hint="Телефон"
-            android:inputType="phone"
-            android:minHeight="48dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/inputEmail"
-            app:layout_constraintStart_toStartOf="@+id/inputEmail"
-            app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+            app:layout_constraintEnd_toEndOf="@+id/inputOtchestvo"
+            app:layout_constraintStart_toStartOf="@+id/inputOtchestvo"
+            app:layout_constraintTop_toBottomOf="@+id/inputOtchestvo"
+            android:autofillHints=""
+            tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/inputPassword"
@@ -171,23 +179,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/key"
+            android:drawableStart="@drawable/key"
             android:drawablePadding="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Пароль (Не менее 6 символов)"
+            android:hint="@string/pass6symobls"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="10dp"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/inputMobile"
-            app:layout_constraintStart_toStartOf="@+id/inputMobile"
-            app:layout_constraintTop_toBottomOf="@+id/inputMobile" />
+            app:layout_constraintEnd_toEndOf="@+id/inputEmail"
+            app:layout_constraintStart_toStartOf="@+id/inputEmail"
+            app:layout_constraintTop_toBottomOf="@+id/inputEmail"
+            android:autofillHints=""
+            tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/inputPassword2"
@@ -195,23 +205,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/key"
+            android:drawableStart="@drawable/key"
             android:drawablePadding="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="Повторите пароль"
+            android:hint="@string/retrypass"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="10dp"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:paddingBottom="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/inputPassword"
             app:layout_constraintStart_toStartOf="@+id/inputPassword"
-            app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/inputPassword"
+            android:autofillHints=""
+            tools:ignore="VisualLintTextFieldSize" />
 
         <Button
             android:id="@+id/btnReg"
@@ -220,11 +232,12 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/btn_bg"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Регистрация"
+            android:text="@string/registration"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/inputPassword2"
             app:layout_constraintStart_toStartOf="@+id/inputPassword2"
-            app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
+            app:layout_constraintTop_toBottomOf="@+id/inputPassword2"
+            tools:ignore="DuplicateSpeakableTextCheck,VisualLintButtonSize" />
 
 
         <TextView
@@ -233,8 +246,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-3dp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Не нужен аккаунт?"
-            android:textColor="@color/orange"
+            android:text="@string/noneedinacc"
+            android:textColor="#EF6C00"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="@+id/linearLayout2"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
@@ -256,16 +269,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:paddingRight="3dp"
-                android:text="Уже зарегистрированы?"
-                android:textColor="@color/black" />
+                android:paddingEnd="3dp"
+                android:text="@string/alreadyRegistered"
+                android:textColor="@color/black"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/loginActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Войти!"
+                android:text="@string/join"
                 android:textColor="@color/blue" />
 
         </LinearLayout>
@@ -278,7 +292,9 @@
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/back" />
+            app:srcCompat="@drawable/back"
+            android:contentDescription="@string/todo"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
